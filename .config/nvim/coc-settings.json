@@ -8,7 +8,7 @@
   // C++
   "cpp.formatting.provider": "clangformat",
   "cpp.formatting.clangformatPath": "/usr/bin/clang-format-15",
-  "cland.enabled": "true",
+  "clangd.enabled": true,
   "clangd.compilationDatabaseCandidates": ["${workspaceFolder}/build/", 
                                            "${workspaceFolder}",
                                            "${workspaceFolder}/_skbuild/linux-x86_64-3.10/cmake-build",
