@@ -1,0 +1,28 @@
+# /home/luca/.config/tmuxinator/side_monitor.yml
+
+name: side_monitor
+root: ~/
+
+windows:
+  - monitor: 
+      layout: 9462,253x71,0,0{153x71,0,0,110,99x71,154,0,115}
+      panes:
+        - clear && vifm
+        - btop
+  - KissLuca:
+      layout: fc46,246x70,0,0[246x56,0,0,26,246x13,0,57,30]
+      panes:
+        - cd /home/luca/Workspace/contributions/kiss-icp/ && clear && vim
+        - cd /home/luca/Workspace/contributions/kiss-icp/ && clear
+  - SumanthMain:
+      layout: fc46,246x70,0,0[246x56,0,0,26,246x13,0,57,30]
+      panes:
+        - cd /home/luca/Workspace/tmp/rgbd_odometry/ && clear && vim
+        - cd /home/luca/Workspace/tmp/rgbd_odometry/ && clear
+  - STMapping:
+      layout: fc46,246x70,0,0[246x56,0,0,26,246x13,0,57,30]
+      panes:
+        - cd /home/luca/Workspace/spatio-temporal-mapping/ && clear && vim
+        - cd /home/luca/Workspace/spatio-temporal-mapping/ && clear
+  
+
