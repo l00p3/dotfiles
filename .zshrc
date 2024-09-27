@@ -5,135 +5,72 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Path to your oh-my-zsh installation.
+# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-
-# --- THEME ---
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time Oh My Zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-# --- OhMyZSH standard options ---
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-# Preferred editor for local and remote sessions
-EDITOR="vim"
-VISUAL="vim"
-GIT_EDITOR="vim"
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
 
-
-# --- PLUGINS ---
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-	zsh-autosuggestions
+  git
+  # zsh-autosuggestions
   z
-	copypath
 )
 
 source $ZSH/oh-my-zsh.sh
 
+# --- User configuration ---
 
-# --- ENV VARIABLES ---
-# export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
-
-
-# --- ALIASES ---
+# ALIASES
+alias vim="nvim"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias gs='git status'
 alias ga='git add --all'
 alias gc='git commit'
 alias gppb='git pull --rebase'
-alias prettygit='git log --all --decorate --oneline --graph'
-alias ckb='cmake -Bbuild -DCMAKE_EXPORT_COMPILE_COMMANDS=1 && cmake --build build -j$(nproc --all)'
-alias ktm="exit"
-alias dormi="gnome-screensaver-command -l"
-alias muori="sudo shutdown now"
+alias cmb='cmake -Bbuild -DCMAKE_EXPORT_COMPILE_COMMANDS=1 && cmake --build build'
 alias install="sudo apt install"
 alias update="sudo apt update && sudo apt dist-upgrade"
 alias mux="tmuxinator"
-alias meheref="rm -rf"
 alias c="clear"
 alias casa="cd && c"
 
-
-
-# --- ROS2 (Humble) ---
-# Comment this to true value if you want to use ROS1
-# ROS ALIASES
-# alias roscdhome="roscd && cd .."
-
-# To use Turtlebot 3 simulator with NAV2
-# export TURTLEBOT3_MODEL=waffle
-# export GAZEBO_MODEL_PATH=/opt/ros/humble/share/turtlebot3_gazebo/models
-
-# Load the ROS workspace
-source /opt/ros/humble/setup.zsh
-
-# My current ROS workspace(s)
-# source ~/Workspace/ros2_ws/install/setup.zsh
-
-# COLCON_CD
-source /usr/share/colcon_cd/function/colcon_cd.sh
-export _colcon_cd_root=~/Workspace/ros2_ws/
-
-# COLCON tab completion
-source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh
-
-# Autocomplete
-eval "$(register-python-argcomplete3 ros2)"
-eval "$(register-python-argcomplete3 colcon)"
-
-# Useful to start gazebo
-# export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-
-# When launching rtabmap_ros's nodes, if you have the error error while loading 
-# shared libraries..., try ldconfig or add the next line at the end of 
-# your ~/.bashrc to fix it:
-# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/ros/noetic/lib/x86_64-linux-gnu
-
-
-
-# --- GAZEBO PLUGINS ---
-export IGN_GAZEBO_SYSTEM_PLUGIN_PATH=/home/luca/source/gazebo_plugins/RGLGazeboPlugin/install/RGLServerPlugin:$IGN_GAZEBO_SYSTEM_PLUGIN_PATH
-export IGN_GUI_PLUGIN_PATH=/home/luca/source/gazebo_plugins/RGLGazeboPlugin/install/RGLVisualize:$IGN_GUI_PLUGIN_PATH
-export RGL_PATTERNS_DIR=/home/luca/source/gazebo_plugins/RGLGazeboPlugin/lidar_patterns
-
-
-
-# --- OpenBLAS ---
-# To allow to use openBLAS to OverFeat
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/OpenBLAS/lib/
-
-
-
-# --- CUDA ---
-export CUDA_HOME=/usr/local/cuda
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
-export PATH=/usr/local/cuda/bin:$PATH
-
-
-
-# TODO: figure it out this
-# Add python packages path to PYTHONPATH (for some reason it is not there)
-# export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.10/site-packages
-
-
-
-# --- pyenv ---
-# export PYENV_ROOT="$HOME/.pyenv"
-# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
-
-
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-fpath+=~/.zfunc
+# For zsh-autosuggestions in MacOS
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
