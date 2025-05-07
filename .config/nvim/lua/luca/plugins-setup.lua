@@ -115,7 +115,7 @@ return packer.startup(function(use)
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
 	-- to switch cpp/h files
-	use({ "jakemason/ouroboros", requires = { { "nvim-lua/plenary.nvim" } } })
+	use("jakobknauer/cppswitch")
 
 	-- to handle LaTeX
 	use({

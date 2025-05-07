@@ -17,9 +17,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # --- OhMyZSH standard options ---
 
 # Preferred editor for local and remote sessions
-EDITOR="vim"
-VISUAL="vim"
-GIT_EDITOR="vim"
+EDITOR="nvim"
+VISUAL="nvim"
+GIT_EDITOR="nvim"
 
 
 
@@ -57,34 +57,43 @@ alias mux="tmuxinator"
 alias meheref="rm -rf"
 alias c="clear"
 alias casa="cd && c"
+alias vim="nvim"
 
 
 
-# --- ROS2 (Humble) ---
-# Comment this to true value if you want to use ROS1
-# ROS ALIASES
-# alias roscdhome="roscd && cd .."
+# For glorified bib
+export GITLAB_PROVATE_TOKEN=FokaK8hAbK9RCdzisybQ
 
-# To use Turtlebot 3 simulator with NAV2
-# export TURTLEBOT3_MODEL=waffle
-# export GAZEBO_MODEL_PATH=/opt/ros/humble/share/turtlebot3_gazebo/models
 
-# Load the ROS workspace
-source /opt/ros/humble/setup.zsh
+
+# --- ROS2 (Jazzy) ---
+# Source "underlay" environment
+source /opt/ros/jazzy/setup.zsh
 
 # My current ROS workspace(s)
 # source ~/Workspace/ros2_ws/install/setup.zsh
 
-# COLCON_CD
+# Colcon cd
 source /usr/share/colcon_cd/function/colcon_cd.sh
-export _colcon_cd_root=~/Workspace/ros2_ws/
+source /usr/share/colcon_cd/function/colcon_cd-argcomplete.zsh
+export _colcon_cd_root=/opt/ros/jazzy/
 
-# COLCON tab completion
-source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh
+# Aliases
+alias cc_build="colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+alias cc_build_sym="colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --symlink-install"
+alias cc_build_select="colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --packages-select"
+alias cc_build_sym_select="colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --symlink-install --packages-select "
+
+# Variables
+export ROS_DOMAIN_ID=3
 
 # Autocomplete
-eval "$(register-python-argcomplete3 ros2)"
-eval "$(register-python-argcomplete3 colcon)"
+# NON SE PO FA PE COLCONE
+
+### FOR SIMULATION
+# To use Turtlebot 3 simulator with NAV2
+# export TURTLEBOT3_MODEL=waffle
+# export GAZEBO_MODEL_PATH=/opt/ros/humble/share/turtlebot3_gazebo/models
 
 # Useful to start gazebo
 # export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
@@ -97,9 +106,9 @@ eval "$(register-python-argcomplete3 colcon)"
 
 
 # --- GAZEBO PLUGINS ---
-export IGN_GAZEBO_SYSTEM_PLUGIN_PATH=/home/luca/source/gazebo_plugins/RGLGazeboPlugin/install/RGLServerPlugin:$IGN_GAZEBO_SYSTEM_PLUGIN_PATH
-export IGN_GUI_PLUGIN_PATH=/home/luca/source/gazebo_plugins/RGLGazeboPlugin/install/RGLVisualize:$IGN_GUI_PLUGIN_PATH
-export RGL_PATTERNS_DIR=/home/luca/source/gazebo_plugins/RGLGazeboPlugin/lidar_patterns
+# export IGN_GAZEBO_SYSTEM_PLUGIN_PATH=/home/luca/source/gazebo_plugins/RGLGazeboPlugin/install/RGLServerPlugin:$IGN_GAZEBO_SYSTEM_PLUGIN_PATH
+# export IGN_GUI_PLUGIN_PATH=/home/luca/source/gazebo_plugins/RGLGazeboPlugin/install/RGLVisualize:$IGN_GUI_PLUGIN_PATH
+# export RGL_PATTERNS_DIR=/home/luca/source/gazebo_plugins/RGLGazeboPlugin/lidar_patterns
 
 
 
@@ -116,16 +125,11 @@ export PATH=/usr/local/cuda/bin:$PATH
 
 
 
-# TODO: figure it out this
-# Add python packages path to PYTHONPATH (for some reason it is not there)
-# export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.10/site-packages
-
-
-
 # --- pyenv ---
-# export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
+eval "$(pyenv init -)"
 
 
 

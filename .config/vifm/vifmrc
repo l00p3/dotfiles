@@ -504,3 +504,9 @@ windo normal zo
 
 " Show only one pane at start
 only
+
+" Keymap to open the current folder with nautilus
+nnoremap gf :!nautilus %d &<CR>
+
+" Keymap to open a terminal in the current folder
+map t :! $SHELL<CR>

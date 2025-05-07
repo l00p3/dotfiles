@@ -46,6 +46,13 @@ end
 lspconfig["clangd"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	cmd = {
+		"clangd",
+		"--offset-encoding=utf-16",
+		"--background-index",
+		"--background-index-priority=low",
+		"--clang-tidy",
+	},
 })
 lspconfig["cmake"].setup({
 	capabilities = capabilities,

@@ -1,27 +1,20 @@
-# /home/luca/.config/tmuxinator/peter.yml
+# /home/luca/.config/tmuxinator/first_workspace.yml
 
 name: first_workspace
 root: ~/
 
 windows:
-  - STMapping:
-      layout: fc46,246x70,0,0[246x56,0,0,26,246x13,0,57,30]
+  - Lucalization:
+      layout: 3d2e,246x60,0,0[246x32,0,0,3,246x27,0,33{123x27,0,33,11,122x27,124,33,16}]
       panes:
-        - cd /home/luca/Workspace/spatio-temporal-mapping/ && clear && vim -c "vsplit"
-        - cd /home/luca/Workspace/spatio-temporal-mapping/ && clear
-  - STSM:
-      layout: fc46,246x70,0,0[246x56,0,0,26,246x13,0,57,30]
+        - cd /home/luca/Workspace/lucalization/ && clear && vim -c "vsplit"
+        - cd /home/luca/Workspace/lucalization/ && clear
+        - cd /home/luca/Workspace/lucalization/ && clear
+  - AID4Crap:
+      layout: 3d2e,246x60,0,0[246x32,0,0,3,246x27,0,33{123x27,0,33,11,122x27,124,33,16}]
       panes:
-        - cd /home/luca/Workspace/semantic-spatio-temporal-mapping/ && clear && vim -c "vsplit"
-        - cd /home/luca/Workspace/semantic-spatio-temporal-mapping/ && clear
-  - PaperWriting:
-      layout: fc46,246x70,0,0[246x56,0,0,26,246x13,0,57,30]
-      panes:
-        - cd /home/luca/Documents/my_papers/lobefaro2024ral/ && clear && vim -c "vsplit"
-        - cd /home/luca/Documents/my_papers/lobefaro2024ral/ && clear
-  - LuCloudCompare:
-      layout: fc46,246x70,0,0[246x56,0,0,26,246x13,0,57,30]
-      panes:
-        - cd /home/luca/Workspace/LCC/ && clear && vim -c "vsplit"
-        - cd /home/luca/Workspace/LCC/ && clear
-    
+        - cd /home/luca/Workspace/contrastive_spatio_temporal_fruits/ && clear && vim -c "vsplit"
+        - cd /home/luca/Workspace/contrastive_spatio_temporal_fruits/ && clear
+        - cd /home/luca/Workspace/contrastive_spatio_temporal_fruits/ && clear
+  - Explorer:
+      - vifm
