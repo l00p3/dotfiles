@@ -1,0 +1,6 @@
+Simply the commands to run when you have a fresh installation:
+
+sudo apt install nodejs npm
+sudo apt install lua5.4
+sudo apt install lucarocks
+npm install -g neovim

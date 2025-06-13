@@ -16,3 +16,8 @@ require("luca.plugins.treesitter")
 require("luca.plugins.gitsigns")
 require("luca.plugins.ouroboros")
 require("luca.plugins.cppswitch")
+
+-- lazy version (will become it)
+-- require("core.options")
+-- require("core.keymaps")
+-- require("config.lazy")
