@@ -4,3 +4,6 @@ sudo apt install nodejs npm
 sudo apt install lua5.4
 sudo apt install lucarocks
 npm install -g neovim
+sudo apt install clangd-17 (or newer???)
+
+
