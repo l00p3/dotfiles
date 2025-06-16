@@ -4,6 +4,12 @@ sudo apt install nodejs npm
 sudo apt install lua5.4
 sudo apt install lucarocks
 npm install -g neovim
-sudo apt install clangd-17 (or newer???)
+sudo apt install clangd
 
+# Optional: Install lua-language-server (luca-ls)
+# First download the tar.gz from github luca-language-server
+mkdir -p ~/.local/share/lua-language-server
+tar --extract --file lua-language-server-3.14.0-linux-x64.tar.gz -av -C ~/.local/share/lua-language-server
+ln -s ~/.local/share/lua-language-server/bin/lua-language-server ~/.local/bin/lua-language-server
+# Then check that lua-language-server works, if not, export PATH=$PATH:~/.local/bin
 
