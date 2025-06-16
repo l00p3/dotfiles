@@ -13,3 +13,16 @@ tar --extract --file lua-language-server-3.14.0-linux-x64.tar.gz -av -C ~/.local
 ln -s ~/.local/share/lua-language-server/bin/lua-language-server ~/.local/bin/lua-language-server
 # Then check that lua-language-server works, if not, export PATH=$PATH:~/.local/bin
 
+
+
+TODO:
+- finish video
+- go to definition and co does not work (set telescope and search for the command keymap that u used before)
+- formatting (https://github.com/stevearc/conform.nvim)
+- telescope
+- gitsigns
+- autopairs
+- cppswitch
+- comment
+- TODOs (wg in keymaps there is one with vim-maximizer)
+- delete packer

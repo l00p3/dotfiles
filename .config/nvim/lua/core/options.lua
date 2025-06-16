@@ -59,7 +59,7 @@ vim.api.nvim_set_keymap("v", "p", "pgvy", { noremap = true })
 -- avoid VimTex to open the quickfix window on warnings
 vim.g.vimtex_quickfix_open_on_warning = 0
 
--- Set up diagnostics
+-- Set up diagnostics (compatible with lsp_lines plugin)
 vim.diagnostic.config({
   virtual_text = false,
   virtual_lines = true,
