@@ -16,7 +16,6 @@ ln -s ~/.local/share/lua-language-server/bin/lua-language-server ~/.local/bin/lu
 
 
 TODO:
-- finish video
 - go to definition and co does not work (set telescope and search for the command keymap that u used before)
 - formatting (https://github.com/stevearc/conform.nvim)
 - telescope

@@ -1,19 +1,27 @@
 -- Performant, batteries-included completion plugin for Neovim 
 return {
-  'saghen/blink.cmp',
-  dependencies = { 'rafamadriz/friendly-snippets' },
-  version = '1.*',
+  "saghen/blink.cmp",
+  dependencies = { "rafamadriz/friendly-snippets" },
+  version = "1.*",
   opts = {
-    keymap = { preset = 'super-tab' },
+    keymap = { preset = "super-tab" },
 
     appearance = {
-      nerd_font_variant = 'normal'
+      nerd_font_variant = "normal"
     },
 
     completion = { documentation = { auto_show = true } },
 
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+      providers = {
+          lazydev = {
+            name = "LazyDev",
+            module = "lazydev.integrations.blink",
+            -- make lazydev completions top priority (see `:h blink.cmp`)
+            score_offset = 100,
+          },
+        },
     },
 
     fuzzy = { implementation = "prefer_rust_with_warning" }
