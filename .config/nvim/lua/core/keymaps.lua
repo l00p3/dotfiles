@@ -34,7 +34,7 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 ----------------------
 -- Plugin Keybinds
 ----------------------
--- vim-maximizer (TODO: does not work)
+-- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
 -- telescope
@@ -43,3 +43,4 @@ keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>") -- find string in 
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
+

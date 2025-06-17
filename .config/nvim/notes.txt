@@ -16,12 +16,11 @@ ln -s ~/.local/share/lua-language-server/bin/lua-language-server ~/.local/bin/lu
 
 
 TODO:
-- go to definition and co does not work (set telescope and search for the command keymap that u used before)
+- python, latex and other lsp config
 - formatting (https://github.com/stevearc/conform.nvim)
-- telescope
 - gitsigns
 - autopairs
 - cppswitch
 - comment
-- TODOs (wg in keymaps there is one with vim-maximizer)
+- vimtex
 - delete packer
