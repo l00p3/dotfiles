@@ -13,10 +13,32 @@ tar --extract --file lua-language-server-3.14.0-linux-x64.tar.gz -av -C ~/.local
 ln -s ~/.local/share/lua-language-server/bin/lua-language-server ~/.local/bin/lua-language-server
 # Then check that lua-language-server works, if not, export PATH=$PATH:~/.local/bin
 
+# To install pyright lsp
+sudo apt update
+sudo apt install nodejs npm
+sudo npm install -g pyright
+
+# To install cmake lsp
+pip install cmake-language-server
+
+# For latex lsp
+# Download the tar.gz from github (https://github.com/latex-lsp/texlab)
+tar -xzf texlab-x86_64-linux.tar.gz
+sudo mv texlab /usr/local/bin/
+# Check if it worked
+texlab --version
+
+# For latex spell checking
+# Download the tar.gz from github (https://github.com/valentjn/ltex-ls)
+tar -xzf ltex-ls-16.0.0-linux-x64.tar.gz
+sudo mv ltex-ls-16.0.0 /opt/
+sudo ln -s /opt/ltex-ls-16.0.0/bin/ltex-ls /usr/local/bin/ltex-ls
+# Check if it worked
+ltex-ls --version
+
 
 
 TODO:
-- python, latex and other lsp config
 - formatting (https://github.com/stevearc/conform.nvim)
 - gitsigns
 - autopairs

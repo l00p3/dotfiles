@@ -3,6 +3,7 @@ return {
   "neovim/nvim-lspconfig",
   config = function ()
     local lspconfig = require("lspconfig")
+    local util = require('lspconfig.util')
 
     local on_attach = function(client, bufnr)
       local bufopts = { noremap=true, silent=true, buffer=bufnr }
@@ -26,8 +27,20 @@ return {
         "--clang-tidy",
       }
     })
+    lspconfig.pyright.setup({on_attach = on_attach})
+    lspconfig.cmake.setup({
+      cmd = { 'cmake-language-server' },
+      on_attach=on_attach,
+      filetypes = { 'cmake' },
+      root_dir = util.root_pattern('CMakePresets.json', 'CTestConfig.cmake', '.git', 'build', 'cmake'),
+      single_file_support = true,
+      init_options = {
+        buildDirectory = 'build',  -- adjust if your build directory differs
+      },
+    })
+    lspconfig.texlab.setup({on_attach = on_attach})
+    lspconfig.ltex.setup({on_attach = on_attach})
     lspconfig.lua_ls.setup({on_attach = on_attach})
-
   end,
 
 }
