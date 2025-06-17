@@ -9,7 +9,7 @@ sudo apt install clangd
 # Formatters
 sudo apt install clang-format
 pip install black
-pip install cmakelang
+luarocks install --server=https://luarocks.org/dev luaformatter
 
 # Optional: Install lua-language-server (luca-ls)
 # First download the tar.gz from github luca-language-server
@@ -41,8 +41,3 @@ sudo ln -s /opt/ltex-ls-16.0.0/bin/ltex-ls /usr/local/bin/ltex-ls
 # Check if it worked
 ltex-ls --version
 
-
-
-TODO:
-- formatting (https://github.com/stevearc/conform.nvim)
-- delete packer
