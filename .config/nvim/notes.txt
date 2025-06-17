@@ -6,6 +6,11 @@ sudo apt install lucarocks
 npm install -g neovim
 sudo apt install clangd
 
+# Formatters
+sudo apt install clang-format
+pip install black
+pip install cmakelang
+
 # Optional: Install lua-language-server (luca-ls)
 # First download the tar.gz from github luca-language-server
 mkdir -p ~/.local/share/lua-language-server
@@ -40,9 +45,4 @@ ltex-ls --version
 
 TODO:
 - formatting (https://github.com/stevearc/conform.nvim)
-- gitsigns
-- autopairs
-- cppswitch
-- comment
-- vimtex
 - delete packer
