@@ -1,26 +1,31 @@
 Simply the commands to run when you have a fresh installation:
 
+sudo apt update
+sudo apt upgrade
 sudo apt install nodejs npm
 sudo apt install lua5.4
 sudo apt install lucarocks
-npm install -g neovim
+sudo npm install -g neovim
 sudo apt install clangd
+sudo apt install xdotool
+sudo apt install biber
+pip install 'pynvim @ git+https://github.com/neovim/pynvim'
+sudo npm install -g pyright
+sudo apt install cmake
+pip install cmake-language-server
+sudo apt install clang-format
+pip install black
+sudo luarocks install --server=https://luarocks.org/dev luaformatter
+sudo apt install texlive-extra-utils
+pip install cmakelang
 
-
-# Optional: Install lua-language-server (luca-ls)
-# First download the tar.gz from github luca-language-server
+# Manual things
+# For lua-language-server (luca-ls)
+# First download the tar.gz from github luca-language-server from https://github.com/LuaLS/lua-language-server
 mkdir -p ~/.local/share/lua-language-server
 tar --extract --file lua-language-server-3.14.0-linux-x64.tar.gz -av -C ~/.local/share/lua-language-server
 ln -s ~/.local/share/lua-language-server/bin/lua-language-server ~/.local/bin/lua-language-server
 # Then check that lua-language-server works, if not, export PATH=$PATH:~/.local/bin
-
-# To install pyright lsp
-sudo apt update
-sudo apt install nodejs npm
-sudo npm install -g pyright
-
-# To install cmake lsp
-pip install cmake-language-server
 
 # For latex lsp
 # Download the tar.gz from github (https://github.com/latex-lsp/texlab)
@@ -28,12 +33,6 @@ tar -xzf texlab-x86_64-linux.tar.gz
 sudo mv texlab /usr/local/bin/
 # Check if it worked
 texlab --version
-
-# Formatters
-sudo apt install clang-format
-pip install black
-luarocks install --server=https://luarocks.org/dev luaformatter
-sudo apt install texlive-extra-utils
 
 # For latex spell checking
 # Download the tar.gz from github (https://github.com/valentjn/ltex-ls)
