@@ -83,6 +83,9 @@ alias cc_build="colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 alias cc_build_sym="colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --symlink-install"
 alias cc_build_select="colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --packages-select"
 alias cc_build_sym_select="colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --symlink-install --packages-select "
+count() {
+  ls -1A "$1" | wc -l
+}
 
 # Variables
 export ROS_DOMAIN_ID=3
