@@ -42,3 +42,8 @@ sudo ln -s /opt/ltex-ls-16.0.0/bin/ltex-ls /usr/local/bin/ltex-ls
 # Check if it worked
 ltex-ls --version
 
+# For GLSL LSP
+# Download the tar.gz from https://github.com/nolanderc/glsl_analyzer
+unzip x86_64-linux-musl.zip
+sudo mv bin/glsl_analyzer /usr/local/bin/
+
