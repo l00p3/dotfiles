@@ -5,6 +5,10 @@ return {
         formatters_by_ft = {
             cpp = {"clang_format"},
             c = {"clang_format"},
+            cu = {"clang_format"},
+            cuda = {"clang_format"},
+            vert = {"clang_format"},
+            frag = {"clang_format"},
             python = {"black"},
             lua = {"lua-format"},
             tex = {"latexindent"},
