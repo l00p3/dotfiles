@@ -22,6 +22,9 @@ return {
             cmd = {
                 "clangd", "--offset-encoding=utf-16", "--background-index",
                 "--background-index-priority=low", "--clang-tidy"
+            },
+            filetypes = {
+                "c", "cpp", "objc", "objcpp", "cuda", "proto", "cu", "cuh"
             }
         })
         lspconfig.pyright.setup({on_attach = on_attach})

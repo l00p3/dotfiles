@@ -33,6 +33,12 @@ return {
         require("luasnip.loaders.from_lua").lazy_load({
             paths = {vim.fn.stdpath("config") .. "/lua/snippets"}
         })
+
+        -- Make cpp snippets to be used in CUDA, too
+        local luasnip = require("luasnip")
+        luasnip.filetype_extend("cuda", {"cpp"})
+        luasnip.filetype_extend("cu", {"cpp"})
+
         require("blink.cmp").setup(opts)
     end
 }
