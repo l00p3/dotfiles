@@ -24,8 +24,7 @@ return {
                 "--background-index-priority=low", "--clang-tidy"
             },
             filetypes = {
-                "c", "cpp", "objc", "objcpp", "cuda", "proto", "cu", "cuh",
-                "frag", "vert", "glsl"
+                "c", "cpp", "objc", "objcpp", "cuda", "proto", "cu", "cuh"
             }
         })
         lspconfig.pyright.setup({on_attach = on_attach})
