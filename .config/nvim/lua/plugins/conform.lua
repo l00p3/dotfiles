@@ -8,6 +8,7 @@ return {
             cu = {"clang_format"},
             cuda = {"clang_format"},
             vert = {"clang_format"},
+            glsl = {"clang_format"},
             frag = {"clang_format"},
             python = {"black"},
             lua = {"lua-format"},

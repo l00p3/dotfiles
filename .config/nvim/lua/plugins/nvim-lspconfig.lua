@@ -25,7 +25,7 @@ return {
             },
             filetypes = {
                 "c", "cpp", "objc", "objcpp", "cuda", "proto", "cu", "cuh",
-                "frag", "vert"
+                "frag", "vert", "glsl"
             }
         })
         lspconfig.pyright.setup({on_attach = on_attach})
