@@ -44,6 +44,14 @@ return {
         lspconfig.ltex.setup({on_attach = on_attach})
         lspconfig.lua_ls.setup({on_attach = on_attach})
         lspconfig.glsl_analyzer.setup({on_attach = on_attach})
+
+        -- To install it: install.packages("languageserver") in R
+        lspconfig.r_language_server.setup({
+            on_attach = on_attach,
+            cmd = {"R", "--slave", "-e", "languageserver::run()"},
+            filetypes = {"r", "rmd"},
+            root_dir = util.root_pattern(".git", "Rproj.user")
+        })
     end
 
 }
