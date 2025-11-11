@@ -15,6 +15,10 @@ return {
             keymap('n', 'gr', vim.lsp.buf.references, bufopts)
             keymap('n', 'K', vim.lsp.buf.hover, bufopts)
             -- Add more keymaps as needed
+            -- Disable diagnostics from this client to hide linting messages for R
+            if client.name == "r_language_server" then
+                vim.diagnostic.disable(bufnr)
+            end
         end
 
         lspconfig.clangd.setup({
@@ -51,6 +55,18 @@ return {
             cmd = {"R", "--slave", "-e", "languageserver::run()"},
             filetypes = {"r", "rmd"},
             root_dir = util.root_pattern(".git", "Rproj.user")
+        })
+
+        -- To install it: https://github.com/eclipse-lemminx/lemminx
+        -- Then, copy the gebnerate jar into ~/.local/bin/
+        -- Uh, you need java sdk...
+        lspconfig.lemminx.setup({
+            on_attach = on_attach,
+            filetypes = {"xml", "xacro"},
+            cmd = {
+                "java", "-jar",
+                vim.fn.expand("~/.local/bin/org.eclipse.lemminx-uber.jar")
+            }
         })
     end
 
