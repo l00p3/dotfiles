@@ -1,0 +1,20 @@
+Simply the commands to run when you have a fresh installation:
+
+brew update
+brew install nodejs node
+brew install lua
+brew install lucarocks
+brew install neovim
+brew install llvm
+brew install xdotool
+brew install biber
+pip install 'pynvim @ git+https://github.com/neovim/pynvim'
+npm install -g pyright
+brew install cmake
+pip install cmake-language-server
+brew install clang-format
+pip install black
+luarocks install --server=https://luarocks.org/dev luaformatter
+brew install texlive-extra-utils
+pip install cmakelang
+brew install tree-sitter
