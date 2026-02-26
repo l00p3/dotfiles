@@ -27,7 +27,7 @@ return {
 
         -- Keymaps
         vim.keymap.set("n", "<leader>S", "<cmd>CppswitchSwitch<CR>")
-        vim.keymap.set("n", "<lader>h", "<cmd>CppswitchGotoHeader<CR>")
+        vim.keymap.set("n", "<leader>h", "<cmd>CppswitchGotoHeader<CR>")
         vim.keymap.set("n", "<leader>c", "<cmd>CppswitchGotoImpl<CR>")
 
         require("cppswitch").setup()
