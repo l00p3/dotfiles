@@ -7,6 +7,10 @@ return {
     s({trig = "cout", dscr = "std::cout << ... << std::endl;"},
       {t("std::cout << "), i(1, "1"), t(" << std::endl;")}),
     s({trig = "cerr", dscr = "std::cerr << ... << std::endl;"},
-      {t("std::cerr << "), i(1, "error"), t(" << std::endl;")})
+      {t("std::cerr << "), i(1, "error"), t(" << std::endl;")}),
+    s({trig = "/=", dscr = "Section separator comment"}, {
+        t({"// ============================", "// "}), i(1, "1"),
+        t({"", "// ============================"})
+    })
 }
 
