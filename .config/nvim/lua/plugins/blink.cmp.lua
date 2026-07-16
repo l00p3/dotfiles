@@ -34,10 +34,13 @@ return {
             paths = {vim.fn.stdpath("config") .. "/lua/snippets"}
         })
 
-        -- Make cpp snippets to be used in CUDA, too
+        -- Make cpp snippets to be used in CUDA, c, hpp and h, too
         local luasnip = require("luasnip")
         luasnip.filetype_extend("cuda", {"cpp"})
         luasnip.filetype_extend("cu", {"cpp"})
+        luasnip.filetype_extend("c", {"cpp"})
+        luasnip.filetype_extend("h", {"cpp"})
+        luasnip.filetype_extend("hpp", {"cpp"})
 
         require("blink.cmp").setup(opts)
     end
